@@ -2,24 +2,5 @@ extends layout
 
 block content
   div.container
-    div.card
-      div.card-header
-        div.backdrop
-        div.card-title Texas RoadHouse
-        img.card-header-image(src = 'https://s3-media0.fl.yelpcdn.com/bphoto/4bD8djZmb7a0odhXzGlD1w/l.jpg')
-      div.card-body
-        div.edit
-          a(href = '#') Edit
-        div.card-details
-          div.category American
-          div.rating
-            span &#X2b50
-            span &#X2b50
-            span &#X2b50
-        div.description
-            | sdyrhhyytujjtfjfjjytfjj
-            | ewrhgrwtjhertyjhrtrtjhe
-            | sdyrhhyytujjtfjfjjytfjj
-            | ewrhgrwtjhertyjhrtrtjhe
-            | sdyrhhyytujjtfjfjjytfjj
-            | ewrhgrwtjhertyjhrtrtjhe
+    each restaurant in restaurants
+        +restaurantCard(restaurant)
