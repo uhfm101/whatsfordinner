@@ -1,6 +1,7 @@
 extends layout
 
 block content
-  div.container
+    include mixins/restaurantCard
+    div.container
     each restaurant in restaurants
         +restaurantCard(restaurant)

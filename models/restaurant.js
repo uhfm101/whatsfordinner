@@ -15,13 +15,14 @@ module.exports = (sequelize, DataTypes) => {
   }
   Restaurant.init({
     name: DataTypes.STRING,
-    category: Datatypes.STRING,
-    rating: DataTypes.STRING,
+    category: DataTypes.STRING,
+    description: DataTypes.STRING,
+    rating: DataTypes.INTEGER,
     image: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Restaurant',
-    tableName: 'restaurant',
+    tableName: 'restaurants',
     timestamps: false
   });
   return Restaurant;
