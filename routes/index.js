@@ -12,6 +12,8 @@ router.get('/edit/:id', restaurantController.updateRestaurant)
 
 router.get('/delete/:id', restaurantController.deleteRestaurant)
 
-router.get('/add/', restaurantController.renderAddForm)
+router.get('/add', restaurantController.renderAddForm)
+
+router.get('/add', restaurantController.addRestaurant)
 
 module.exports = router;

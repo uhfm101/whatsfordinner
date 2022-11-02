@@ -1,5 +1,5 @@
 const {Restaurant} = require('../models')
-const categories = ['American', 'Fast Food']
+const categories = ['American', 'Mexican', 'Italian', 'Greek', 'Fast Food']
 
 module.exports.viewAll = async function(req, res, next) {
     const restaurants = await Restaurant.findAll()
@@ -42,7 +42,7 @@ module.exports.deleteRestaurant = async function(req, res){
     res.redirect('/')
 }
 
-module.exports.renderAddForm = async function(req, res){
+module.exports.renderAddForm = function(req, res){
     const restaurant = {
         name: "",
         description: "",
@@ -50,9 +50,21 @@ module.exports.renderAddForm = async function(req, res){
         image: "",
         category: categories[0],
     };
-    res.render('add', {restaurant, categories})
+    res.render('add', {restaurant, categories })
 }
 
 module.exports.addForm = async function(req, res){
     await Restaurant.create
+}
+
+module.exports.addRestaurant = async function(req, res){
+    await Restaurant.create(
+        {
+            name: req.body.name,
+            category: req.body.category,
+            image: req.body.image,
+            rating: req.body.rating,
+            description: req.body.description
+        });
+    res.redirect('/');
 }
