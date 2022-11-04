@@ -10,7 +10,7 @@ body {
   text-decoration: none;
 }
 
-container{
+.container{
   padding: 48px;
   display: flex;
   gap: 30px;
@@ -107,4 +107,11 @@ container{
 .add-button-row{
   display: flex;
   justify-content: flex-start;
+}
+
+.main-header{
+  background: #242323;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
